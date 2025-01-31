@@ -2,7 +2,16 @@
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        background: '#1A1C20',
+        foreground: '#EEEEEE',
+        title: '#FF9543',
+        btn: '#FF9543',
+        btnText: '#1A1C20',
+        borderInput: '#EEEEEE'
+      }
+    }
   },
   plugins: []
 };
