@@ -9,7 +9,12 @@ export default {
         title: '#FF9543',
         btn: '#FF9543',
         btnText: '#1A1C20',
-        borderInput: '#EEEEEE'
+        borderInput: '#EEEEEE',
+        focus: '#FF9543'
+      },
+      fontFamily: {
+        rubik: ['Rubik', 'sans-serif'],
+        permanentMarker: ['Permanent Marker', 'sans-serif']
       }
     }
   },
