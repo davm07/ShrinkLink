@@ -1,0 +1,11 @@
+POST http://localhost:3000/api/shrink
+Content-Type: application/json
+
+{
+  "originalUrl": "https://www.youtube.com/shorts/3FZPRT3b36k",
+  "userId": "046a36e7-49ef-47e2-b7f3-1ad54f75a70d"
+}
+
+###
+GET http://localhost:3000/api/urls/046a36e7-49ef-47e2-b7f3-1ad54f75a70d
+Content-Type: application/json
