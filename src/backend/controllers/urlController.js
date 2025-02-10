@@ -16,7 +16,7 @@ export const createShortUrl = async (req, res) => {
 };
 
 export const getUserUrls = async (req, res) => {
-  const { userId } = req.params;
+  const { userId } = req.query;
 
   try {
     const urls = await UrlShort.find({ userId: userId });
@@ -28,7 +28,7 @@ export const getUserUrls = async (req, res) => {
 };
 
 export const redirectUrl = async (req, res) => {
-  const { shortUrl } = req.params; // Acceder correctamente a req.params
+  const { shortUrl } = req.query; // Acceder correctamente a req.params
 
   try {
     // Buscar la URL acortada en la base de datos
