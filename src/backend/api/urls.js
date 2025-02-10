@@ -1,4 +1,4 @@
-import connectDB from '../lib/db';
+import connectDB from '../lib/db.js';
 import { getUserUrls } from '../controllers/urlController';
 
 export default async function handler(req, res) {
