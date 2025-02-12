@@ -1,11 +1,9 @@
 /* global chrome */
 
-// Función para generar un UUID único
 function generateUUID() {
-  return crypto.randomUUID(); // Disponible en navegadores modernos
+  return crypto.randomUUID();
 }
 
-// Verificar si ya existe un UUID, si no, crearlo y guardarlo en Chrome Storage
 chrome.storage.local.get(['userId'], (result) => {
   if (!result.userId) {
     const newUserId = generateUUID();
@@ -15,4 +13,14 @@ chrome.storage.local.get(['userId'], (result) => {
   } else {
     console.log('Existing userId:', result.userId);
   }
+});
+
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.storage.local.set({ API_URL: 'https://shrink-link-api.vercel.app/' });
+});
+
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.storage.local.set({
+    DOMAIN_URL: 'shrinkit.fyi/'
+  });
 });

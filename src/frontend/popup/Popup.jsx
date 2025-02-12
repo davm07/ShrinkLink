@@ -33,16 +33,13 @@ function Popup() {
       <div className='flex flex-col p-5 h-full'>
         <h1 className='font-permanentMarker text-3xl text-title'>ShrinkLink</h1>
         {
-          <p>User ID: {userId}</p>
-        }
-        {
           activeTab === 'shrink' && (
-            <ShrinkView changeView={() => setActiveTab('history')} />
+            <ShrinkView changeView={() => setActiveTab('history')} userId={userId}/>
           )
         }
         {
           activeTab === 'history' && (
-            <LinksView changeView={() => setActiveTab('shrink')} links={links} />
+            <LinksView changeView={() => setActiveTab('shrink')} userId={userId} />
           )
         }
       </div>
