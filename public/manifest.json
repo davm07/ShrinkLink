@@ -27,9 +27,9 @@
     "type": "module"
   },
   "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["src/frontend/content/index.jsx"]
-    }
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
   ]
 }
