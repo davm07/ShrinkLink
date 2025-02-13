@@ -28,7 +28,7 @@
   "content_scripts": [
   ],
   "host_permissions": [
-    "https://*/*",
-    "http://*/*"
+    "https://www.shrinkit.fyi/*",
+    "https://shrink-link-api.vercel.app/*"
   ]
 }
