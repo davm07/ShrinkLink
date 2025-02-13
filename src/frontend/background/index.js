@@ -24,3 +24,7 @@ chrome.runtime.onInstalled.addListener(() => {
     DOMAIN_URL: 'shrinkit.fyi/'
   });
 });
+
+chrome.windows.onRemoved.addListener(() => {
+  chrome.storage.local.set({ userLinks: [] });
+});

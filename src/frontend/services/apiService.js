@@ -33,7 +33,16 @@ export async function shortenUrl(originalUrl, userId) {
     if (!res.ok) throw new Error('Failed to shorten URL');
 
     const data = await res.json();
-    return `${DOMAIN_URL}${data.shortenedUrl}`;
+    const urlSend = `${DOMAIN_URL}${data.shortenedUrl}`;
+    const urlsInStorage = (await getUrlsInStorage()) || [];
+    const isUrlAlreadyInStorage = urlsInStorage.includes(urlSend);
+
+    if (!isUrlAlreadyInStorage) {
+      urlsInStorage.push(urlSend);
+      chrome.storage.local.set({ userLinks: urlsInStorage });
+    }
+
+    return urlSend;
   } catch (error) {
     console.error('Error shortening URL:', error);
     return null;

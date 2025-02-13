@@ -19,8 +19,7 @@
     "128": "favicon/icon-128.png"
   },
   "permissions": [
-    "storage",
-    "activeTab"
+    "storage"
   ],
   "background": {
     "service_worker": "src/frontend/background/index.js",
